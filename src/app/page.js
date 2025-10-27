@@ -1,7 +1,7 @@
 'use client';
 
 import Card from "./card";
-import GallerySlider from "./gallery";
+import Button from "./button";
 import Nav from "./nav";
 import Rectangle from "../../public/images/Rectangle.png";
 import Image from "next/image";
@@ -71,19 +71,14 @@ export default function Home() {
                   </div>
                   <div className="flex-1 flex justify-between items-center "> 
                     <ImageUpload />
-                    <button
-                        onClick={handlePrev} id="prev"
-                        className={`px-3.5 py-3 text-sm hover:bg-black text-gray cursor-pointer rounded-full shadow-[0px_0px_35px_rgba(0,0,0,0.75),-1px_0px_8px_rgba(255,255,255,0.20)]  ${isclicked === 'prev' ? 'bg-linear-to-r from-[#64717e] to-[#344454]' : 'bg-linear-to-r from-[#303439] to-[#161718] hover:from-black hover:to-[#171717]'}`}
-                      >
+                    <Button onClick={handlePrev} className={isclicked} id="prev">
                         &lt;-
-                      </button>
-
-                      <button
-                        onClick={handleNext} id="next"
-                        className={`px-3.5 py-3 text-sm text-gray cursor-pointer rounded-full  shadow-[0px_0px_35px_rgba(0,0,0,0.75),-1px_0px_8px_rgba(255,255,255,0.20)] hover:bg-black ${isclicked === 'next' ? 'bg-linear-to-r from-[#64717e] to-[#344454]' : 'bg-linear-to-r from-[#303439] to-[#161718] hover:from-black hover:to-[#171717]'}`}
-                      >
+                    </Button>
+                    
+                    <Button onClick={handleNext} className={isclicked} id="next">
                         -&gt;
-                      </button>
+                    </Button>
+                    
                   </div>
               </div>
               {/* <GallerySlider /> */}
